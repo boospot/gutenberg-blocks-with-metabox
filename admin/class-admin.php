@@ -1,14 +1,14 @@
 <?php
 
-namespace SkeletonPlugin;
+namespace GutenbergBlocksWithMetabox;
 /**
  * The admin-specific functionality of the plugin.
  *
  * @link       https://booskills.com/rao
  * @since      1.0.0
  *
- * @package    SkeletonPlugin
- * @subpackage SkeletonPlugin/admin
+ * @package    GutenbergBlocksWithMetabox
+ * @subpackage GutenbergBlocksWithMetabox/admin
  */
 
 /**
@@ -17,8 +17,8 @@ namespace SkeletonPlugin;
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    SkeletonPlugin
- * @subpackage SkeletonPlugin/admin
+ * @package    GutenbergBlocksWithMetabox
+ * @subpackage GutenbergBlocksWithMetabox/admin
  * @author     Rao <rao@booskills.com>
  */
 class Admin {
@@ -68,10 +68,10 @@ class Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in SkeletonPlugin_Loader as all of the hooks are defined
+		 * defined in GutenbergBlocksWithMetabox_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The SkeletonPlugin_Loader will then create the relationship
+		 * The GutenbergBlocksWithMetabox_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
@@ -91,10 +91,10 @@ class Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in SkeletonPlugin_Loader as all of the hooks are defined
+		 * defined in GutenbergBlocksWithMetabox_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The SkeletonPlugin_Loader will then create the relationship
+		 * The GutenbergBlocksWithMetabox_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */

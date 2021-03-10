@@ -11,21 +11,21 @@
  *
  * @link              https://booskills.com/rao
  * @since             1.0.0
- * @package           SkeletonPlugin
+ * @package           GutenbergBlocksWithMetabox
  *
  * @wordpress-plugin
  * Plugin Name:       Skeleton Plugin
  * Plugin URI:        https://boospot.com/
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       This is a test plugin to create Gutenberg blocks with Metabox.io
  * Requires PHP:      7.0
  * Requires at least: 5.0
- * Tested up to:      5.3
+ * Tested up to:      5.7
  * Version:           1.0.0
  * Author:            Rao
  * Author URI:        https://booskills.com/rao
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       skeleton-plugin
+ * Text Domain:       gutenberg-blocks-with-metabox
  * Domain Path:       /languages
  */
 
@@ -39,9 +39,9 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'SKELETON_PLUGIN_VERSION', '1.0.0' );
+define( 'GUTENBERG_BLOCKS_WITH_METABOX_VERSION', '1.0.0' );
 
-define( 'SKELETON_PLUGIN_NAME', 'skeleton-plugin' );
+define( 'GUTENBERG_BLOCKS_WITH_METABOX_NAME', 'gutenberg-blocks-with-metabox' );
 
 /**
  * Plugin base name.
@@ -49,7 +49,7 @@ define( 'SKELETON_PLUGIN_NAME', 'skeleton-plugin' );
  * Start at version 1.0.0
  */
 /** @noinspection PhpUnused */
-define( 'SKELETON_PLUGIN_BASE_NAME', basename( __FILE__ ) );
+define( 'GUTENBERG_BLOCKS_WITH_METABOX_BASE_NAME', basename( __FILE__ ) );
 
 
 /**
@@ -58,7 +58,7 @@ define( 'SKELETON_PLUGIN_BASE_NAME', basename( __FILE__ ) );
  * Start at version 1.0.0
  */
 /** @noinspection PhpUnused */
-define( 'SKELETON_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
+define( 'GUTENBERG_BLOCKS_WITH_METABOX_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
 /**
  * Plugin url to access its resources through browser
@@ -66,7 +66,7 @@ define( 'SKELETON_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
  * Start at version 1.0.0
  */
 /** @noinspection PhpUnused */
-define( 'SKELETON_PLUGIN_URL_PATH', plugin_dir_url( __FILE__ ) );
+define( 'GUTENBERG_BLOCKS_WITH_METABOX_URL_PATH', plugin_dir_url( __FILE__ ) );
 
 /**
  * Composer Auto Loader
@@ -78,21 +78,21 @@ require_once 'vendor/autoload.php';
  * The code that runs during plugin activation.
  * This action is documented in includes/class-skeleton-activator.php
  */
-function skeleton_plugin_activate() {
-	SkeletonPlugin\Activator::activate();
+function gutenberg_blocks_with_metabox_activate() {
+	GutenbergBlocksWithMetabox\Activator::activate();
 
 }
 
-register_activation_hook( __FILE__, 'skeleton_plugin_activate' );
+register_activation_hook( __FILE__, 'gutenberg_blocks_with_metabox_activate' );
 /**
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-skeleton-deactivator.php
  */
-function skeleton_plugin_deactivate() {
-	SkeletonPlugin\Deactivator::deactivate();
+function gutenberg_blocks_with_metabox_deactivate() {
+	GutenbergBlocksWithMetabox\Deactivator::deactivate();
 }
 
-register_deactivation_hook( __FILE__, 'skeleton_plugin_deactivate' );
+register_deactivation_hook( __FILE__, 'gutenberg_blocks_with_metabox_deactivate' );
 
 /**
  * Begins execution of the plugin.
@@ -103,10 +103,10 @@ register_deactivation_hook( __FILE__, 'skeleton_plugin_deactivate' );
  *
  * @since    1.0.0
  */
-function skeleton_plugin() {
+function gutenberg_blocks_with_metabox() {
 
-	return SkeletonPlugin\Init::get_instance();
+	return GutenbergBlocksWithMetabox\Init::get_instance();
 
 }
 
-skeleton_plugin();
+gutenberg_blocks_with_metabox();

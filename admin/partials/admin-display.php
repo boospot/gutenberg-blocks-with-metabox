@@ -8,8 +8,8 @@
  * @link       https://booskills.com/rao
  * @since      1.0.0
  *
- * @package    SkeletonPlugin
- * @subpackage SkeletonPlugin/admin/partials
+ * @package    GutenbergBlocksWithMetabox
+ * @subpackage GutenbergBlocksWithMetabox/admin/partials
  */
 ?>
 

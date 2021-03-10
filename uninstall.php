@@ -22,7 +22,7 @@
  * @link       https://booskills.com/rao
  * @since      1.0.0
  *
- * @package    SkeletonPlugin
+ * @package    GutenbergBlocksWithMetabox
  */
 
 // If uninstall not called from WordPress, then exit.

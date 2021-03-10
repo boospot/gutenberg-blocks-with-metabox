@@ -1,5 +1,5 @@
 <?php
-namespace SkeletonPlugin;
+namespace GutenbergBlocksWithMetabox;
 /**
  * Define the internationalization functionality
  *
@@ -9,8 +9,8 @@ namespace SkeletonPlugin;
  * @link       https://booskills.com/rao
  * @since      1.0.0
  *
- * @package    SkeletonPlugin
- * @subpackage SkeletonPlugin/includes
+ * @package    GutenbergBlocksWithMetabox
+ * @subpackage GutenbergBlocksWithMetabox/includes
  */
 
 /**
@@ -20,8 +20,8 @@ namespace SkeletonPlugin;
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    SkeletonPlugin
- * @subpackage SkeletonPlugin/includes
+ * @package    GutenbergBlocksWithMetabox
+ * @subpackage GutenbergBlocksWithMetabox/includes
  * @author     Rao <rao@booskills.com>
  */
 class i18N {
@@ -36,7 +36,7 @@ class i18N {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'skeleton-plugin',
+			'gutenberg-blocks-with-metabox',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);
