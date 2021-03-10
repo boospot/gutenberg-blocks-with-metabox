@@ -2,3 +2,64 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
+
+/**
+ * Testimonial Slider CSS
+ * Credit: https://codepen.io/mmeghan/pen/NWNpajP
+ */
+.testimonial-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1.5rem auto;
+    width: 75%;
+    max-width: 1200px;
+}
+.testimonial-list section {
+    margin-bottom: 50px;
+    width: 264px;
+}
+.testimonial-list section .top-box {
+    background-color: #DFDBD5;
+    width: 263px;
+    height: 103px;
+    position: absolute;
+    z-index: 1;
+}
+.testimonial-list section img {
+    background-color: gray;
+    border-radius: 100%;
+    border: 3px soild #d4d4d4;
+    width: 133px;
+    height: 133px;
+    object-fit: cover;
+    position: relative;
+    display: block;
+    margin: auto;
+    top: 15px;
+    z-index: 5;
+}
+.testimonial-list section .bottom-box {
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.16);
+    width: 100%;
+    transform: translateY(-50px);
+}
+.testimonial-list section .bottom-box blockquote {
+    margin: 0 auto;
+    padding: 0;
+    width: 210px;
+}
+.testimonial-list section .bottom-box blockquote p {
+    font-style: italic;
+    font-size: 16px;
+    line-height: 21px;
+    padding-top: 60px;
+}
+.testimonial-list section .bottom-box .test-details {
+    text-align: center;
+}
+.testimonial-list section .bottom-box .test-details span {
+    font-size: 18px;
+    font-weight: 500;
+}

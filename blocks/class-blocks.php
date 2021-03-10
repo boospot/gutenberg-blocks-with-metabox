@@ -10,7 +10,6 @@ namespace GutenbergBlocksWithMetabox;
  * @package    GutenbergBlocksWithMetabox
  * @subpackage GutenbergBlocksWithMetabox/blocks
  */
-
 class Blocks {
 
 	/**
@@ -48,8 +47,8 @@ class Blocks {
 
 	/**
 	 * Enqueue block JavaScript and CSS for the editor
-     *
-     * @hooked enqueue_block_editor_assets
+	 *
+	 * @hooked enqueue_block_editor_assets
 	 */
 	function enqueue_block_editor_assets() {
 
@@ -73,8 +72,8 @@ class Blocks {
 
 	/**
 	 * Enqueue frontend and editor JavaScript and CSS
-     *
-     * @hooked enqueue_block_assets
+	 *
+	 * @hooked enqueue_block_assets
 	 */
 	function enqueue_block_assets() {
 
@@ -92,7 +91,7 @@ class Blocks {
 	 * @param $meta_boxes
 	 *
 	 * @return mixed
-     * @hooked rwmb_meta_boxes
+	 * @hooked rwmb_meta_boxes
 	 */
 	public function register_blocks_with_metabox( $meta_boxes ) {
 		$prefix = 'mb_';
@@ -124,6 +123,16 @@ class Blocks {
 					'id'                => $prefix . 'testimonial_author_name',
 					'type'              => 'text',
 					'label_description' => __( 'Testimonial Author Name', 'gutenberg-blocks-with-metabox' ),
+				],
+				[
+					'name' => __( 'Author Title', 'gutenberg-blocks-with-metabox' ),
+					'id'   => $prefix . 'testimonial_author_title',
+					'type' => 'text',
+				],
+				[
+					'name' => __( 'Author Image', 'gutenberg-blocks-with-metabox' ),
+					'id'   => $prefix . 'testimonial_author_image',
+					'type' => 'single_image',
 				],
 			],
 		];
@@ -200,22 +209,42 @@ class Blocks {
 		}
 
 		// Unique HTML ID if available.
-		$id = 'hero-' . ( $attributes['id'] ?? '' );
+		$id = 'testimonial-' . ( $attributes['id'] ?? '' );
 		if ( ! empty( $attributes['anchor'] ) ) {
 			$id = $attributes['anchor'];
 		}
 
 		// Custom CSS class name.
-		$class = 'wrapper border-radius ' . ( $attributes['className'] ?? '' );
+		$class = 'testimonial-list ' . ( $attributes['className'] ?? '' );
 		if ( ! empty( $attributes['align'] ) ) {
 			$class .= " align{$attributes['align']}";
 		}
 		?>
+
         <div id="<?= $id ?>" class="<?= $class ?>">
-            <div class="description text-right">
-                <p><?= mb_get_block_field( 'mb_testimonial_text' ) ?></p>
-            </div>
-            <div class="title"><?= mb_get_block_field( 'mb_testimonial_author_name' ) ?></div>
+            <section>
+
+				<?php
+				$image = mb_get_block_field( 'mb_testimonial_author_image' );
+				if ( ! empty( $image ) ) {
+					printf(
+						'<div class="top-box"></div><img src="%s" alt="%s" />',
+						$image['full_url'],
+						$image['alt']
+					);
+				}
+				?>
+                <div class="bottom-box">
+                    <blockquote>
+                        <p><?= mb_get_block_field( 'mb_testimonial_text' ) ?></p>
+                    </blockquote>
+                    <div class="test-details">
+                        <p>
+                            <span><?= mb_get_block_field( 'mb_testimonial_author_name' ) ?></span><br><small><?= mb_get_block_field( 'mb_testimonial_author_title' ) ?></small>
+                        </p>
+                    </div>
+                </div>
+            </section>
         </div>
 
 		<?php
