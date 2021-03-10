@@ -14,7 +14,7 @@
  * @package           GutenbergBlocksWithMetabox
  *
  * @wordpress-plugin
- * Plugin Name:       Skeleton Plugin
+ * Plugin Name:       Gutenberg Blocks with Metabox
  * Plugin URI:        https://boospot.com/
  * Description:       This is a test plugin to create Gutenberg blocks with Metabox.io
  * Requires PHP:      7.0

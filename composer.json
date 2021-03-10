@@ -9,12 +9,40 @@
       "email": "rao@booskills.com"
     }
   ],
-  "require": {},
+  "require": {
+    "wpackagist-plugin/meta-box": "5.*",
+    "meta-box/mb-blocks": "dev-master"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.metabox.io/YOUR_PREMIUM_KEY"
+    },
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "extra": {
+    "installer-paths": {
+      "vendor/meta-box/meta-box": [
+        "wpackagist-plugin/meta-box"
+      ],
+      "vendor/meta-box/{$name}/": [
+        "type:wordpress-plugin"
+      ]
+    }
+  },
   "autoload": {
     "classmap": [
       "includes",
       "admin",
-      "public"
+      "public",
+      "blocks"
+    ],
+    "files": [
+      "vendor/meta-box/meta-box/meta-box.php",
+      "vendor/meta-box/mb-blocks/mb-blocks.php"
     ]
   }
 }

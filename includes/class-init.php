@@ -65,6 +65,15 @@ class Init {
 	protected $version;
 
 	/**
+	 * The Block class instance
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      object $blocks The instance of Block class
+	 */
+	protected $blocks;
+
+	/**
 	 * Define the core functionality of the plugin.
 	 *
 	 * Set the plugin name and the plugin version that can be used throughout the plugin.
@@ -93,7 +102,7 @@ class Init {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_front_hooks();
-		$this->define_taxonomy_hooks();
+		$this->define_blocks_hooks();
 
 		do_action( 'gutenberg_blocks_with_metabox_init_construct' );
 
@@ -159,7 +168,6 @@ class Init {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
-
 	}
 
 	/**
@@ -201,22 +209,36 @@ class Init {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_front, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_front, 'enqueue_scripts' );
 
-//		var_dump( $this->front );
-
 	}
 
 	/**
-	 * Register all of the hooks related to taxonomies
+	 * Register all blocks related functionality
 	 *
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	private function define_taxonomy_hooks() {
+	private function define_blocks_hooks() {
 
-//		$plugin_taxonomies = new Taxonomy();
+		$this->blocks = new Blocks( $this->get_plugin_name(), $this->get_version() );
 
+		/**
+		 * This shall load assets for Editor only
+		 */
+		$this->loader->add_action( 'enqueue_block_editor_assets', $this->blocks, 'enqueue_block_editor_assets' );
+
+		/**
+		 * This shall load assets in Editor AND Frontend
+		 */
+		$this->loader->add_action( 'enqueue_block_assets', $this->blocks, 'enqueue_block_assets' );
+
+		/**
+		 * Register Blocks Using Metabox
+		 * requires the MB-Blocks extension as well
+		 */
+		$this->loader->add_filter( 'rwmb_meta_boxes', $this->blocks, 'register_blocks_with_metabox' );
 
 	}
+
 
 	/**
 	 * get the instance of the main plugin class
