@@ -16,7 +16,7 @@
   "repositories": [
     {
       "type": "composer",
-      "url": "https://packages.metabox.io/YOUR_PREMIUM_KEY"
+      "url": "https://packages.metabox.io/YOUR_METABOX_KEYS"
     },
     {
       "type": "composer",
